@@ -9,7 +9,7 @@ export default function ResumeSection() {
     <section id="resume" className="py-24 px-6 bg-zinc-900/40">
       <div className="max-w-4xl mx-auto">
         <SectionHeading
-          title="resume"
+          title="professional timeline"
           subtitle="education, work, and research experience"
         />
         {/* Legend */}
