@@ -1,10 +1,10 @@
 "use client"
 
 const navLinks = [
-  { label: "home", href: "#hero" },
-  { label: "projects", href: "#projects" },
-  { label: "resume", href: "#resume" },
-  { label: "contact", href: "#contact" },
+  { label: "home", href: "/#hero" },
+  { label: "projects", href: "/#projects" },
+  { label: "resume", href: "/#resume" },
+  { label: "contact", href: "/#contact" },
 ]
 
 export default function Navbar() {
