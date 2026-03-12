@@ -8,7 +8,7 @@ export const projects: ProjectItem[] = [
       "a website to showcase my projects, research, and amazing personality :)",
     techStack: ["typescript", "next.js", "tailwind css", "framer motion"],
     links: {
-      github: "https://github.com/E10Feng/portfolio_website",
+      github: "https://github.com/E10Feng/portfolio#",
     },
     featured: true,
     year: 2026,
