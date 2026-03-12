@@ -53,7 +53,7 @@ export function TransitionProvider({ children }: { children: React.ReactNode }) 
 
   const completeTransition = useCallback(() => {
     setState((s) => ({ ...s, phase: "fading" }))
-    setTimeout(() => setState({ rect: null, card: null, phase: "idle" }), 500)
+    setTimeout(() => setState({ rect: null, card: null, phase: "idle", triggeredAt: null }), 500)
   }, [])
 
   return (
