@@ -79,7 +79,7 @@ export const resumeItems: ResumeItem[] = [
     location: "st. louis, mo",
     description: [
       "minor in computer science",
-      "d3 varsity swimming (5x ncaa all-american)",
+      "d3 varsity swimming (7x ncaa all-american)",
       "beyond boundaries interdisciplinary studies",
       "dean's list all semesters",
       "vagelos biological research fellowship",
