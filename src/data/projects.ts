@@ -33,6 +33,23 @@ export const projects: ProjectItem[] = [
     ]
   },
   {
+    id: "recall-graph",
+    title: "RecallGraph",
+    description:
+      "a drop-in langgraph checkpointer backed by postgresql/pgvector that gives agents real persistent memory across sessions — replacing ephemeral in-memory state with durable, semantically searchable episodic memory",
+    techStack: ["python", "langgraph", "postgresql", "pgvector", "sqlalchemy", "openai embeddings"],
+    links: {
+      github: "https://github.com/E10Feng/recall-graph",
+    },
+    featured: true,
+    year: 2026,
+    content: [
+      { type: "text", content: "LangGraph's built-in MemorySaver dies on every process restart — agents lose prior decisions, evolving facts, and context continuity. RecallGraph solves this with a drop-in PostgreSQL-backed checkpointer that persists full agent state across sessions." },
+      { type: "text", content: "The library provides two main interfaces: RecallGraphCheckpointer (a drop-in replacement for MemorySaver that stores full LangGraph state snapshots in PostgreSQL) and RecallMemory (a high-level API for episodic memory with semantic recall via pgvector cosine similarity search)." },
+      { type: "text", content: "Key features include persistent cross-session checkpointing, semantically searchable episodic memory, auto-summarization of stale memories to prevent context bloat, and full thread isolation for multi-tenant safety. Built and tested with 11/11 tests passing." }
+    ]
+  },
+  {
     id: "derm-fairness-project",
     title: "dermatology fairness project",
     description:
