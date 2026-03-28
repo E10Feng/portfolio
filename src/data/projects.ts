@@ -12,6 +12,7 @@ export const projects: ProjectItem[] = [
     },
     featured: true,
     year: 2026,
+    date: "2026-01-01",
   },
   {
     id: "swell1-publication",
@@ -43,6 +44,7 @@ export const projects: ProjectItem[] = [
     },
     featured: true,
     year: 2026,
+    date: "2026-03-28",
     content: [
       { type: "text", content: "LangGraph agents fail silently — wrong tool calls, context drift, infinite loops — and standard logging gives you no visibility into what actually happened inside a run. AgentReplay solves this by turning RecallGraph's persistent checkpoints into a step-through debugger." },
       { type: "text", content: "Load any past agent session by thread_id, then navigate forward and backward through each checkpoint. Inspect the full graph state at every step, diff consecutive checkpoints to see exactly what changed, and search across sessions by node name, tool call, or message content." },
@@ -60,6 +62,7 @@ export const projects: ProjectItem[] = [
     },
     featured: true,
     year: 2026,
+    date: "2026-03-28",
     content: [
       { type: "text", content: "LangGraph's built-in MemorySaver dies on every process restart — agents lose prior decisions, evolving facts, and context continuity. RecallGraph solves this with a drop-in PostgreSQL-backed checkpointer that persists full agent state across sessions." },
       { type: "text", content: "The library provides two main interfaces: RecallGraphCheckpointer (a drop-in replacement for MemorySaver that stores full LangGraph state snapshots in PostgreSQL) and RecallMemory (a high-level API for episodic memory with semantic recall via pgvector cosine similarity search)." },

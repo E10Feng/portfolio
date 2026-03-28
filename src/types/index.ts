@@ -14,6 +14,7 @@ export interface ProjectItem {
   }
   featured: boolean
   year: number
+  date?: string  // ISO date string YYYY-MM-DD for precise ordering
   content?: ContentBlock[]
 }
 
