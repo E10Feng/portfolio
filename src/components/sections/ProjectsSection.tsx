@@ -12,7 +12,7 @@ export default function ProjectsSection() {
           subtitle="a selection of AI, healthcare research, and backend engineering work"
         />
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {projects.map((project, index) => (
+          {[...projects].sort((a, b) => (b.year ?? 0) - (a.year ?? 0)).map((project, index) => (
             <FadeInWhenVisible key={project.id} delay={index * 0.1}>
               <ProjectCard project={project} />
             </FadeInWhenVisible>
