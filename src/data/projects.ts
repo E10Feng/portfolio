@@ -33,6 +33,23 @@ export const projects: ProjectItem[] = [
     ]
   },
   {
+    id: "agent-replay",
+    title: "AgentReplay",
+    description:
+      "a cli debugger for langgraph agents — step through past sessions checkpoint by checkpoint, inspect state, tool calls, and decisions at every node",
+    techStack: ["python", "langgraph", "recallgraph", "rich", "click"],
+    links: {
+      github: "https://github.com/E10Feng/agent-replay",
+    },
+    featured: true,
+    year: 2026,
+    content: [
+      { type: "text", content: "LangGraph agents fail silently — wrong tool calls, context drift, infinite loops — and standard logging gives you no visibility into what actually happened inside a run. AgentReplay solves this by turning RecallGraph's persistent checkpoints into a step-through debugger." },
+      { type: "text", content: "Load any past agent session by thread_id, then navigate forward and backward through each checkpoint. Inspect the full graph state at every step, diff consecutive checkpoints to see exactly what changed, and search across sessions by node name, tool call, or message content." },
+      { type: "text", content: "Built as a natural companion to RecallGraph — if RecallGraph is the memory layer, AgentReplay is the debugger that makes that memory inspectable and actionable." }
+    ]
+  },
+  {
     id: "recall-graph",
     title: "RecallGraph",
     description:
