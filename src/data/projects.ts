@@ -70,6 +70,23 @@ export const projects: ProjectItem[] = [
     ]
   },
   {
+    id: "prior-pen",
+    title: "PriorPen",
+    description:
+      "paste a diagnosis and treatment plan, get a submission-ready prior authorization letter with cited clinical guidelines and an approval likelihood estimate",
+    techStack: ["python", "rag", "llm", "healthcare", "clinical", "fastapi"],
+    links: {
+      github: "https://github.com/E10Feng/prior-pen",
+    },
+    featured: true,
+    year: 2026,
+    date: "2026-03-31",
+    content: [
+      { type: "text", content: "Prior authorization is one of the most time-consuming bottlenecks in clinical workflows — doctors and care staff spend hours drafting letters to insurance companies, often with no guarantee of approval. PriorPen solves this by turning a diagnosis and treatment plan into a complete, clinically-cited prior authorization submission in seconds." },
+      { type: "text", content: "The system uses a RAG pipeline over clinical guideline documents to pull relevant citations, combines that with the patient's diagnosis and proposed treatment, and generates a well-structured prior auth letter tailored to the specific insurance requirements. It also provides an approval likelihood estimate based on the strength of clinical evidence and policy matching." }
+    ]
+  },
+  {
     id: "derm-fairness-project",
     title: "dermatology fairness project",
     description:
