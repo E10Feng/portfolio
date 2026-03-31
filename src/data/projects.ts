@@ -70,6 +70,23 @@ export const projects: ProjectItem[] = [
     ]
   },
   {
+    id: "capsule",
+    title: "Capsule",
+    description:
+      "paste meeting notes or a transcript, get structured decisions and action items with owners and deadlines, plus a searchable decision history",
+    techStack: ["python", "fastapi", "langchain", "pgvector", "postgresql", "htmx"],
+    links: {
+      github: "https://github.com/E10Feng/capsule",
+    },
+    featured: true,
+    year: 2026,
+    date: "2026-03-31",
+    content: [
+      { type: "text", content: "Teams lose decisions and action items immediately after meetings end. Existing tools focus on transcription, not structured outcome capture — the same discussions repeat weeks later because there's no searchable layer that turns conversations into trackable commitments." },
+      { type: "text", content: "Capsule pastes meeting notes or a transcript and uses an LLM to extract decisions, action items with owners and deadlines, stored in a pgvector-backed searchable history. Includes Slack-ready summary output and a weekly digest of open items." }
+    ]
+  },
+  {
     id: "tracevault",
     title: "TraceVault",
     description:
