@@ -70,6 +70,23 @@ export const projects: ProjectItem[] = [
     ]
   },
   {
+    id: "tracevault",
+    title: "TraceVault",
+    description:
+      "a python decorator that wraps any langchain/langgraph agent and produces tamper-proof, natural-language audit trails so teams can reconstruct exactly why an agent made each decision",
+    techStack: ["python", "langgraph", "langchain", "hmac", "compliance", "audit"],
+    links: {
+      github: "https://github.com/E10Feng/tracevault",
+    },
+    featured: true,
+    year: 2026,
+    date: "2026-03-31",
+    content: [
+      { type: "text", content: "AI agents make consequential decisions in production but leave no traceable record of why — when an agent buys the wrong product, leaks data, or makes a billing error, teams cannot reconstruct the decision path. TraceVault solves this by wrapping any LangChain/LangGraph agent with a decorator that logs every tool call, LLM input/output, and decision with HMAC tamper-proofing." },
+      { type: "text", content: "The wrapper generates a natural-language audit trail viewable in a simple web UI, making it trivial to replay and inspect exactly what the agent saw and did at each step. Built for regulated industries and safety-conscious teams deploying agents beyond toy demos." }
+    ]
+  },
+  {
     id: "prior-pen",
     title: "PriorPen",
     description:
