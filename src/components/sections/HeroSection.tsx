@@ -27,7 +27,7 @@ export default function HeroSection() {
                 athlete
               </p>
               <p className="mt-3 text-sm text-zinc-500 leading-relaxed ml-auto max-w-xs">
-                Division III collegiate swimmer and recreational pickleball + tennis player.
+                division iii collegiate swimmer and recreational pickleball + tennis player
               </p>
             </div>
 
@@ -115,7 +115,7 @@ export default function HeroSection() {
                 &lt;builder&gt;
               </p>
               <p className="mt-3 text-sm text-zinc-500 leading-relaxed max-w-xs">
-                Full-stack developer building AI-powered tools and LLM systems.
+                full-stack developer building ai-powered tools and llm systems
               </p>
             </div>
 
