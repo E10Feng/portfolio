@@ -17,12 +17,12 @@ export default function HeroSection() {
     <section id="hero" className="min-h-screen bg-zinc-950 flex items-center justify-center px-6 pt-16 overflow-hidden">
       <div className="max-w-6xl w-full">
 
-        {/* ── Main 3-column layout: label | portrait | label ── */}
+        {/* ── Main layout: 3-col grid on desktop, stacked flex on mobile ── */}
         <FadeInWhenVisible>
-          <div className="grid grid-cols-3 items-center gap-8 mb-12">
+          <div className="grid grid-cols-1 md:grid-cols-3 items-center gap-8 mb-8 md:mb-12">
 
-            {/* ── LEFT — athlete ──────────────────────────────── */}
-            <div className="text-right">
+            {/* ── LEFT — athlete (hidden on mobile, shown in stacked below) ── */}
+            <div className="hidden md:block text-right">
               <p className="text-5xl sm:text-6xl font-bold lowercase text-zinc-50 tracking-tight leading-none">
                 athlete
               </p>
@@ -32,7 +32,7 @@ export default function HeroSection() {
             </div>
 
             {/* ── CENTER — Split Portrait ─────────────────────── */}
-            <div className="relative mx-auto" style={{ width: "280px", height: "360px" }}>
+            <div className="relative mx-auto w-64 h-80 sm:w-72 sm:h-[360px] md:w-[280px] md:h-[360px] shrink-0">
               {/* === LEFT HALF — painterly athlete === */}
               <div
                 className="absolute inset-0 overflow-hidden"
@@ -109,8 +109,8 @@ export default function HeroSection() {
               <div className="absolute top-0 bottom-0 left-1/2 w-px bg-zinc-800 z-10" />
             </div>
 
-            {/* ── RIGHT — builder ─────────────────────────────── */}
-            <div className="text-left">
+            {/* ── RIGHT — builder (hidden on mobile, shown in stacked below) ── */}
+            <div className="hidden md:block text-left">
               <p className="text-5xl sm:text-6xl font-mono font-bold text-zinc-50 tracking-tight leading-none">
                 &lt;builder&gt;
               </p>
@@ -119,12 +119,32 @@ export default function HeroSection() {
               </p>
             </div>
 
+            {/* ── MOBILE-ONLY stacked labels (shown below portrait on mobile) ── */}
+            <div className="flex flex-col items-center text-center gap-6 md:hidden col-span-1">
+              <div>
+                <p className="text-5xl sm:text-6xl font-bold lowercase text-zinc-50 tracking-tight leading-none">
+                  athlete
+                </p>
+                <p className="mt-3 text-sm text-zinc-500 leading-relaxed max-w-sm mx-auto">
+                  division iii collegiate swimmer and recreational pickleball + tennis player
+                </p>
+              </div>
+              <div>
+                <p className="text-5xl sm:text-6xl font-mono font-bold text-zinc-50 tracking-tight leading-none">
+                  &lt;builder&gt;
+                </p>
+                <p className="mt-3 text-sm text-zinc-500 leading-relaxed max-w-sm mx-auto">
+                  full-stack developer building ai-powered tools and llm systems
+                </p>
+              </div>
+            </div>
+
           </div>
         </FadeInWhenVisible>
 
         {/* ── Social links + CTA ─────────────────────────── */}
         <FadeInWhenVisible delay={0.2}>
-          <div className="flex flex-wrap items-center justify-center gap-8 mb-10">
+          <div className="flex flex-wrap items-center justify-center gap-6 md:gap-8 pb-4">
             <SocialLink href="https://github.com/E10Feng" icon={Github} label="github" />
             <SocialLink href="https://linkedin.com/in/ethan-feng-604993221/" icon={Linkedin} label="linkedin" />
             <SocialLink href="mailto:ethan.burr@gmail.com" icon={Mail} label="email" />
@@ -141,7 +161,7 @@ export default function HeroSection() {
         </FadeInWhenVisible>
 
         <FadeInWhenVisible delay={0.3}>
-          <div className="text-center">
+          <div className="text-center pb-8 md:pb-0">
             <a
               href="#projects"
               className="text-sm text-zinc-500 hover:text-zinc-300 transition-colors"
