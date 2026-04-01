@@ -21,8 +21,8 @@ export default function HeroSection() {
             />
 
             {/* ── <builder> — left of portrait ── */}
-            <div className="hidden md:block absolute left-0 top-1/2 w-56 -translate-y-1/2 pl-2">
-              <p className="font-mono text-5xl font-bold text-zinc-50 tracking-tight leading-none">
+            <div className="hidden md:block absolute left-0 top-0 w-56 pl-2 pt-4">
+              <p className="font-mono text-6xl font-bold text-zinc-50 tracking-tight leading-none">
                 &lt;builder&gt;
               </p>
               <p className="mt-3 text-xs text-zinc-400 leading-relaxed">
@@ -31,8 +31,8 @@ export default function HeroSection() {
             </div>
 
             {/* ── athlete — right of portrait ── */}
-            <div className="hidden md:block absolute right-0 top-1/2 w-56 -translate-y-1/2 pr-2 text-right">
-              <p className="text-5xl font-bold lowercase text-zinc-50 tracking-tight leading-none">
+            <div className="hidden md:block absolute right-0 top-0 w-56 pr-2 pt-4 text-right">
+              <p className="text-6xl font-bold lowercase text-zinc-50 tracking-tight leading-none">
                 athlete
               </p>
               <p className="mt-3 text-xs text-zinc-400 leading-relaxed">
