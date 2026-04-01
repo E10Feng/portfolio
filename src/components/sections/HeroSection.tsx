@@ -20,8 +20,8 @@ export default function HeroSection() {
               className="w-full h-auto object-cover rounded-2xl block"
             />
 
-            {/* ── <builder> — floats over left shoulder area ── */}
-            <div className="hidden md:block absolute left-0 top-1/3 w-48 pt-2 pl-4">
+            {/* ── <builder> — left of portrait ── */}
+            <div className="hidden md:block absolute left-0 top-1/2 w-56 -translate-y-1/2 pl-2">
               <p className="font-mono text-5xl font-bold text-zinc-50 tracking-tight leading-none">
                 &lt;builder&gt;
               </p>
@@ -30,8 +30,8 @@ export default function HeroSection() {
               </p>
             </div>
 
-            {/* ── athlete — floats over right shoulder area ── */}
-            <div className="hidden md:block absolute right-0 top-1/3 w-48 pt-2 pr-4 text-right">
+            {/* ── athlete — right of portrait ── */}
+            <div className="hidden md:block absolute right-0 top-1/2 w-56 -translate-y-1/2 pr-2 text-right">
               <p className="text-5xl font-bold lowercase text-zinc-50 tracking-tight leading-none">
                 athlete
               </p>
