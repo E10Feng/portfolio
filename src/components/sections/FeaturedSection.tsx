@@ -19,65 +19,32 @@ export default function FeaturedSection() {
 
         <FadeInWhenVisible delay={0.1}>
           {/* 3D scene preview */}
-          <div className="relative rounded-2xl overflow-hidden border border-zinc-700 mb-10 group"
-            style={{
-              background: 'linear-gradient(135deg, #050508 0%, #0a0520 50%, #050508 100%)',
-              aspectRatio: '16/7',
-              maxHeight: '480px',
-            }}
-          >
-            {/* Grid overlay */}
-            <div className="absolute inset-0 opacity-20"
-              style={{
-                backgroundImage: `
-                  linear-gradient(rgba(0,240,255,0.1) 1px, transparent 1px),
-                  linear-gradient(90deg, rgba(0,240,255,0.1) 1px, transparent 1px)
-                `,
-                backgroundSize: '40px 40px',
-              }}
+          <div className="relative rounded-2xl overflow-hidden border border-zinc-700 mb-10 group">
+            <img
+              src="/cyberclaw-city-preview.jpg"
+              alt="CyberClaw City — 3D AI agent architecture visualization"
+              className="w-full object-cover"
+              style={{ aspectRatio: '16/7', maxHeight: '520px' }}
             />
 
-            {/* City silhouette hints */}
-            <div className="absolute bottom-0 left-0 right-0 flex justify-center items-end gap-2 px-8 pb-6">
-              {[
-                { h: 120, w: 20, c: '#7c3aed' },
-                { h: 80, w: 16, c: '#0d9488' },
-                { h: 160, w: 24, c: '#06b6d4' },
-                { h: 60, w: 18, c: '#d946ef' },
-                { h: 100, w: 22, c: '#10b981' },
-                { h: 90, w: 16, c: '#f97316' },
-                { h: 140, w: 20, c: '#3b82f6' },
-              ].map((b, i) => (
-                <div
-                  key={i}
-                  className="rounded-t-sm group-hover:opacity-80 transition-opacity"
-                  style={{
-                    height: `${b.h}px`,
-                    width: `${b.w}px`,
-                    background: `linear-gradient(to top, ${b.c}60, ${b.c}20)`,
-                    boxShadow: `0 0 20px ${b.c}40`,
-                  }}
-                />
-              ))}
-            </div>
-
-            {/* Title overlay */}
-            <div className="absolute top-0 left-0 right-0 p-6 flex items-start justify-between">
-              <div>
-                <p className="text-xs font-mono text-cyan-400/70">CYBERCLAW CITY v1.0</p>
-              </div>
-              <div className="flex gap-2">
-                <span className="text-xs font-mono px-2 py-0.5 rounded border border-cyan-500/30 text-cyan-400/70 bg-cyan-500/10">
-                  7 districts
-                </span>
-                <span className="text-xs font-mono px-2 py-0.5 rounded border border-purple-500/30 text-purple-400/70 bg-purple-500/10">
-                  3D WebGL
-                </span>
-              </div>
+            {/* Overlay badges */}
+            <div className="absolute top-4 left-4 flex gap-2">
+              <span className="text-xs font-mono px-2 py-0.5 rounded border border-cyan-500/30 text-cyan-400 bg-cyan-500/10 backdrop-blur-sm">
+                7 districts
+              </span>
+              <span className="text-xs font-mono px-2 py-0.5 rounded border border-purple-500/30 text-purple-400 bg-purple-500/10 backdrop-blur-sm">
+                3D WebGL
+              </span>
             </div>
 
             {/* Bottom gradient */}
-            <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-zinc-950 to-transparent" />
+            <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-zinc-950/90 to-transparent" />
+
+            {/* Bottom caption */}
+            <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between">
+              <p className="text-xs font-mono text-cyan-400/60">CYBERCLAW CITY v1.0</p>
+              <p className="text-xs text-zinc-500">drag to orbit · scroll to zoom · F for first person</p>
+            </div>
           </div>
         </FadeInWhenVisible>
 
