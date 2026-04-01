@@ -6,8 +6,7 @@ import FadeInWhenVisible from "@/components/animations/FadeInWhenVisible"
 
 // TODO: Replace this placeholder portrait with E10's real photo.
 // Swap the `portraitSrc` value below with the path to the actual image.
-const PORTRAIT_SRC =
-  "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&h=800&fit=crop&crop=face"
+const PORTRAIT_SRC = "/portrait.jpg"
 
 const CODE_SNIPPETS_LEFT = ["<div>", "function", "{ }", "design"]
 const CODE_SNIPPETS_RIGHT = ["</div>", "=>", "const", "return;"]
