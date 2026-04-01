@@ -20,12 +20,12 @@ export default function HeroSection() {
             <img
               src={PORTRAIT_SRC}
               alt="Ethan Feng"
-              className="w-full max-w-xl mx-auto h-auto object-cover block rounded-2xl"
+              className="w-full max-w-2xl mx-auto h-auto object-cover block rounded-2xl"
             />
 
             {/* ── <builder> — left side, eye level ── */}
             <div className="hidden md:block absolute left-0 top-1/2 -translate-y-1/2 w-40">
-              <p className="font-mono text-4xl font-bold text-zinc-200 tracking-tight leading-none">
+              <p className="font-mono text-6xl font-bold text-zinc-50 tracking-tight leading-none">
                 &lt;builder&gt;
               </p>
               <p className="mt-2 text-xs text-zinc-400 leading-relaxed">
@@ -35,7 +35,7 @@ export default function HeroSection() {
 
             {/* ── athlete — right side, eye level ── */}
             <div className="hidden md:block absolute right-0 top-1/2 -translate-y-1/2 w-40 text-right">
-              <p className="text-4xl font-bold lowercase text-zinc-200 tracking-tight leading-none">
+              <p className="text-6xl font-bold lowercase text-zinc-50 tracking-tight leading-none">
                 athlete
               </p>
               <p className="mt-2 text-xs text-zinc-400 leading-relaxed">
