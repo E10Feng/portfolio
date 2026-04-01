@@ -20,7 +20,7 @@ export default function HeroSection() {
             <img
               src={PORTRAIT_SRC}
               alt="Ethan Feng"
-              className="w-full max-w-md mx-auto h-auto object-cover block rounded-2xl"
+              className="w-full max-w-xl mx-auto h-auto object-cover block rounded-2xl"
             />
 
             {/* ── <builder> — left side, eye level ── */}
