@@ -4,7 +4,7 @@ import { Github, Linkedin, Mail, FileDown } from "lucide-react"
 import SocialLink from "@/components/ui/SocialLink"
 import FadeInWhenVisible from "@/components/animations/FadeInWhenVisible"
 
-const PORTRAIT_SRC = "/imageedit_3_9739108414.png"
+const PORTRAIT_SRC = "/transparent (1).png"
 
 export default function HeroSection() {
   return (
