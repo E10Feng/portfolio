@@ -2,6 +2,20 @@ import { ProjectItem } from "@/types"
 
 export const projects: ProjectItem[] = [
   {
+    id: "cyberclaw-city",
+    title: "CyberClaw City",
+    description:
+      "a 3d explorable visualization of an ai agent architecture — navigate through districts representing memory, the build pipeline, job search tools, skills, and more",
+    techStack: ["next.js", "react three fiber", "three.js", "typescript", "zustand", "framer motion"],
+    links: {
+      github: "https://github.com/E10Feng/cyberclaw-city",
+      demo: "https://cyberclaw-city.vercel.app",
+    },
+    featured: true,
+    year: 2026,
+    date: "2026-04-01",
+  },
+  {
     id: "portfolio-website",
     title: "portfolio website",
     description:
