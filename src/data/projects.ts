@@ -16,6 +16,19 @@ export const projects: ProjectItem[] = [
     date: "2026-04-01",
   },
   {
+    id: "faultguard",
+    title: "FaultGuard",
+    description:
+      "a python library for production-grade retry logic, timeout handling, and partial state recovery for langgraph agents — built to solve real reliability problems in agentic pipelines",
+    techStack: ["python", "langgraph", "postgresql", "pgvector"],
+    links: {
+      github: "https://github.com/E10Feng/faultguard",
+    },
+    featured: false,
+    year: 2026,
+    date: "2026-04-02",
+  },
+  {
     id: "portfolio-website",
     title: "portfolio website",
     description:
