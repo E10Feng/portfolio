@@ -16,6 +16,19 @@ export const projects: ProjectItem[] = [
     date: "2026-04-01",
   },
   {
+    id: "replock",
+    title: "RepLock",
+    description:
+      "a browser extension that blocks doomscrolling sites until you complete a camera-verified pushup challenge — MediaPipe Pose runs in-browser to count reps in real-time, FastAPI backend issues 30-min unlock tokens",
+    techStack: ["python", "fastapi", "postgresql", "react", "mediapipe", "chrome extension", "typescript"],
+    links: {
+      github: "https://github.com/E10Feng/replock",
+    },
+    featured: true,
+    year: 2026,
+    date: "2026-04-02",
+  },
+  {
     id: "faultguard",
     title: "FaultGuard",
     description:
