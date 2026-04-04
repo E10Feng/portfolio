@@ -16,6 +16,19 @@ export const projects: ProjectItem[] = [
     date: "2026-04-01",
   },
   {
+    id: "raceiq",
+    title: "RaceIQ",
+    description:
+      "upload a garmin .fit file, get ai coaching breakdown with top 3 actionable fixes — pacing strategy, hr zone distribution, and effort curve analysis for triathletes",
+    techStack: ["fastapi", "python", "fitparse", "postgresql", "pgvector", "react", "vite", "typescript"],
+    links: {
+      github: "https://github.com/E10Feng/raceiq",
+    },
+    featured: true,
+    year: 2026,
+    date: "2026-04-04",
+  },
+  {
     id: "replock",
     title: "RepLock",
     description:
