@@ -2,6 +2,24 @@ import { ProjectItem } from "@/types"
 
 export const projects: ProjectItem[] = [
   {
+    id: "gradyou8",
+    title: "gradYOU8",
+    description:
+      "upload your washu transcript and get a full graduation audit — which requirements you've satisfied, what's remaining, and an ai chat to answer questions about your degree",
+    techStack: ["fastapi", "python", "react", "vite", "minimax", "rag"],
+    links: {
+      github: "https://github.com/E10Feng/gradYOU8",
+    },
+    featured: true,
+    year: 2026,
+    date: "2026-04-09",
+    content: [
+      { type: "text", content: "Graduation requirement tracking at WashU is a manual, confusing process — students dig through DegreeAudit and the bulletin trying to figure out what's left. gradYOU8 automates this by parsing your uploaded transcript PDF into a structured student profile and running it against dynamically-fetched degree requirements." },
+      { type: "text", content: "Rather than hardcoding requirements, the app uses a RAG pipeline over WashU Bulletin PDFs to support any major or minor without manual updates. The dashboard shows overall completion percentage, per-group progress bars, distribution area breakdowns, and specific remaining coursework." },
+      { type: "text", content: "An integrated AI chat interface answers contextual questions about your graduation requirements, with your completed coursework automatically included in every response." },
+    ],
+  },
+  {
     id: "cyberclaw-city",
     title: "CyberClaw City",
     description:
