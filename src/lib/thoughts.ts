@@ -18,7 +18,7 @@ export function getAllThoughts(): Thought[] {
 
   const files = fs.readdirSync(thoughtsDir).filter(f => f.endsWith('.md'))
 
-  const thoughts = files.map(filename => {
+  const thoughts = files.filter(f => !f.startsWith('README')).map(filename => {
     const slug = filename.replace('.md', '')
     const raw = fs.readFileSync(path.join(thoughtsDir, filename), 'utf-8')
     const { data, content } = matter(raw)

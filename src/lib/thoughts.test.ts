@@ -1,6 +1,4 @@
 import { getAllThoughts, getThoughtBySlug } from './thoughts'
-import { existsSync } from 'fs'
-import path from 'path'
 
 describe('getAllThoughts', () => {
   it('returns an array of thoughts', () => {
