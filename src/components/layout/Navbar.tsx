@@ -6,6 +6,7 @@ const navLinks = [
   { label: "projects", href: "/#projects" },
   { label: "resume", href: "/#resume" },
   { label: "contact", href: "/#contact" },
+  { label: "my thoughts", href: "/thoughts" },
 ]
 
 export default function Navbar() {
