@@ -29,10 +29,10 @@ export default function HeroSection() {
           transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
         >
           {/* Tab bar */}
-          <div className="flex items-center border-b border-border bg-surface px-3 h-9">
-            <div className="flex items-center gap-2 bg-canvas px-3 py-1 border border-border border-b-canvas -mb-px rounded-t-sm">
-              <span className="font-code text-xs text-text">ETHAN.md</span>
-              <span className="w-1.5 h-1.5 rounded-full bg-accent" title="unsaved" />
+          <div className="flex items-center border-b border-border bg-surface px-4 h-16">
+            <div className="flex items-center gap-3 bg-canvas px-4 py-2 border border-border border-b-canvas -mb-px rounded-t-sm">
+              <span className="font-display font-bold text-3xl text-text">ETHAN.md</span>
+              <span className="w-2 h-2 rounded-full bg-accent" title="unsaved" />
             </div>
           </div>
 
@@ -72,7 +72,7 @@ export default function HeroSection() {
               <span className="text-text-dim"># </span>
               <span className="text-text font-bold">About</span>
             </motion.p>
-            <motion.p variants={line} className="text-text-dim">Building AI-powered tools and systems.</motion.p>
+            <motion.p variants={line} className="text-text-dim">Building AI-powered tools and software, particularly in healthcare domains.</motion.p>
             <motion.p variants={line} className="text-text-dim">Currently at RediMinds — previously NASA.</motion.p>
             <motion.p variants={line} className="text-text-dim">WashU grad, Computational Biology, 3.9 GPA.</motion.p>
             <motion.p variants={line} className="text-text-dim mb-6">7x NCAA All-American swimmer.</motion.p>
