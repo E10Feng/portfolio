@@ -2,16 +2,16 @@ import Link from 'next/link'
 
 export default function Footer() {
   return (
-    <footer className="border-t border-zinc-800 py-8 text-center text-sm text-zinc-500">
-      <div className="flex flex-col items-center gap-4">
+    <footer className="border-t border-border py-8 px-6">
+      <div className="max-w-6xl mx-auto flex items-center justify-between">
+        <p className="font-sans text-sm text-text-dim">
+          © {new Date().getFullYear()} ethan feng
+        </p>
         <nav className="flex items-center gap-6">
-          <Link href="/thoughts" className="hover:text-zinc-300 transition-colors">
-            my thoughts
+          <Link href="/thoughts" className="font-sans text-sm text-text-dim hover:text-text transition-colors">
+            thoughts
           </Link>
         </nav>
-        <p>
-          © {new Date().getFullYear()} ethan feng. built with next.js & tailwind css.
-        </p>
       </div>
     </footer>
   )

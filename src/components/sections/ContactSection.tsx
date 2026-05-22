@@ -1,21 +1,39 @@
-import { Github, Linkedin, Mail } from "lucide-react"
-import SocialLink from "@/components/ui/SocialLink"
 import SectionHeading from "@/components/ui/SectionHeading"
 import FadeInWhenVisible from "@/components/animations/FadeInWhenVisible"
 
 export default function ContactSection() {
   return (
-    <section id="contact" className="py-24 px-6">
-      <div className="max-w-xl mx-auto text-center">
+    <section id="contact" className="py-24 px-6 bg-canvas">
+      <div className="max-w-6xl mx-auto">
         <SectionHeading
-          title="contact me!"
-          subtitle="i'm open to interesting conversations, collaborations, and full-time roles"
+          number="04"
+          title="contact"
+          subtitle="open to interesting conversations, collaborations, and full-time roles"
         />
         <FadeInWhenVisible delay={0.1}>
-          <div className="flex flex-wrap items-center justify-center gap-8">
-            <SocialLink href="https://www.linkedin.com/in/ethan-feng-604993221/" icon={Linkedin} label="linkedin" />
-            <SocialLink href="mailto:ethan.burr@gmail.com" icon={Mail} label="ethan.burr@gmail.com" />
-            <SocialLink href="https://github.com/E10Feng" icon={Github} label="github" />
+          <div className="flex flex-col sm:flex-row gap-6 sm:gap-10">
+            <a
+              href="https://www.linkedin.com/in/ethan-feng-604993221/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-sans text-text hover:text-accent transition-colors"
+            >
+              linkedin ↗
+            </a>
+            <a
+              href="mailto:ethan.burr@gmail.com"
+              className="font-sans text-text hover:text-accent transition-colors"
+            >
+              ethan.burr@gmail.com ↗
+            </a>
+            <a
+              href="https://github.com/E10Feng"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-sans text-text hover:text-accent transition-colors"
+            >
+              github ↗
+            </a>
           </div>
         </FadeInWhenVisible>
       </div>

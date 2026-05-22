@@ -60,8 +60,8 @@ function Bubble({ tag, style, flight, delay }: {
         width: 120,
         height: 120,
         borderRadius: "50%",
-        background: "rgba(99,102,241,0.12)",
-        border: "1px solid rgba(99,102,241,0.3)",
+        background: "rgba(249,115,22,0.06)",
+        border: "1px solid rgba(249,115,22,0.18)",
         backdropFilter: "blur(4px)",
       }}
       initial={{ y: 0, x: 0 }}
@@ -74,7 +74,7 @@ function Bubble({ tag, style, flight, delay }: {
         delay,
       }}
     >
-      <span className="text-indigo-400 text-base font-medium text-center leading-tight px-3">
+      <span className="font-code text-xs text-center leading-tight px-3" style={{ color: "rgba(249,115,22,0.6)" }}>
         {tag}
       </span>
     </motion.div>

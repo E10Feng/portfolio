@@ -1,97 +1,160 @@
 "use client"
 
-import { Github, Linkedin, Mail, FileDown } from "lucide-react"
-import SocialLink from "@/components/ui/SocialLink"
-import FadeInWhenVisible from "@/components/animations/FadeInWhenVisible"
+import { motion } from "framer-motion"
+import { FileDown, Github, Linkedin, Mail } from "lucide-react"
 
-const PORTRAIT_SRC = "/transparent (1).png"
+const container = {
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+    transition: { staggerChildren: 0.04, delayChildren: 0.1 },
+  },
+}
+
+const line = {
+  hidden: { opacity: 0, x: -8 },
+  show: { opacity: 1, x: 0, transition: { duration: 0.35, ease: "easeOut" } },
+}
 
 export default function HeroSection() {
   return (
-    <section id="hero" className="min-h-screen bg-zinc-950 flex flex-col items-center justify-center px-6 pt-16 overflow-hidden">
+    <section id="hero" className="min-h-screen bg-canvas flex flex-col justify-center px-6 md:px-16 pt-14 pb-12">
+      <div className="w-full max-w-3xl mx-auto">
 
-      {/* ── Hero section bg — light to separate from dark nav ── */}
-      <div className="w-full max-w-5xl pt-16">
-
-        <FadeInWhenVisible>
-          {/* ── Portrait with overlaid labels at eye level ── */}
-          <div className="relative w-full">
-
-            <img
-              src={PORTRAIT_SRC}
-              alt="Ethan Feng"
-              className="w-full max-w-2xl mx-auto h-auto object-cover block rounded-2xl"
-            />
-
-            {/* ── <builder> — left side, eye level ── */}
-            <div className="hidden md:block absolute left-0 top-1/2 -translate-y-1/2 w-40">
-              <p className="font-mono text-6xl font-bold text-zinc-50 tracking-tight leading-none">
-                &lt;builder&gt;
-              </p>
-              <p className="mt-2 text-xs text-zinc-400 leading-relaxed">
-                full-stack developer building ai-powered tools and llm systems
-              </p>
+        {/* Editor chrome */}
+        <motion.div
+          className="border border-border rounded-sm overflow-hidden"
+          initial={{ opacity: 0, y: 24 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+        >
+          {/* Tab bar */}
+          <div className="flex items-center border-b border-border bg-surface px-3 h-9">
+            <div className="flex items-center gap-2 bg-canvas px-3 py-1 border border-border border-b-canvas -mb-px rounded-t-sm">
+              <span className="font-code text-xs text-text">ETHAN.md</span>
+              <span className="w-1.5 h-1.5 rounded-full bg-accent" title="unsaved" />
             </div>
-
-            {/* ── athlete — right side, eye level ── */}
-            <div className="hidden md:block absolute right-0 top-1/2 -translate-y-1/2 w-40 text-right">
-              <p className="text-6xl font-bold lowercase text-zinc-50 tracking-tight leading-none">
-                athlete
-              </p>
-              <p className="mt-2 text-xs text-zinc-400 leading-relaxed">
-                division iii collegiate swimmer and recreational pickleball + tennis player
-              </p>
-            </div>
-
           </div>
-        </FadeInWhenVisible>
 
-        {/* ── Mobile labels — below portrait ── */}
-        <div className="md:hidden flex flex-col items-center text-center mt-8 gap-6">
-          <div>
-            <p className="font-mono text-4xl font-bold text-zinc-50 tracking-tight leading-none">
-              &lt;builder&gt;
-            </p>
-            <p className="mt-2 text-xs text-zinc-400 leading-relaxed max-w-xs mx-auto">
-              full-stack developer building ai-powered tools and llm systems
-            </p>
-          </div>
-          <div>
-            <p className="text-4xl font-bold lowercase text-zinc-50 tracking-tight leading-none">
-              athlete
-            </p>
-            <p className="mt-2 text-xs text-zinc-400 leading-relaxed max-w-xs mx-auto">
-              division iii collegiate swimmer and recreational pickleball + tennis player
-            </p>
-          </div>
-        </div>
-
-        {/* ── Social links + CTA ─────────────────────────── */}
-        <FadeInWhenVisible delay={0.2}>
-          <div className="flex flex-wrap items-center justify-center gap-6 md:gap-8 pb-4 mt-10">
-            <SocialLink href="https://github.com/E10Feng" icon={Github} label="github" />
-            <SocialLink href="https://linkedin.com/in/ethan-feng-604993221/" icon={Linkedin} label="linkedin" />
-            <SocialLink href="mailto:ethan.burr@gmail.com" icon={Mail} label="email" />
-            <a
-              href="/resume.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-2 px-4 py-2 rounded-lg bg-indigo-600 hover:bg-indigo-500 text-white text-sm font-medium transition-colors"
-            >
-              <FileDown size={16} />
-              resume pdf
-            </a>
-          </div>
-        </FadeInWhenVisible>
-
-        <div className="text-center pb-8">
-          <a
-            href="#featured"
-            className="text-sm text-zinc-500 hover:text-zinc-300 transition-colors"
+          {/* File content */}
+          <motion.div
+            className="p-6 md:p-8 font-code text-sm leading-7"
+            variants={container}
+            initial="hidden"
+            animate="show"
           >
-            ↓ see featured
+            {/* Frontmatter */}
+            <motion.p variants={line} className="text-text-dim">---</motion.p>
+            <motion.p variants={line}>
+              <span className="text-accent">name</span>
+              <span className="text-text-dim">: </span>
+              <span className="text-text">Ethan Feng</span>
+            </motion.p>
+            <motion.p variants={line}>
+              <span className="text-accent">role</span>
+              <span className="text-text-dim">: </span>
+              <span className="text-text">AI Engineer · Builder · D3 Swammer</span>
+            </motion.p>
+            <motion.p variants={line}>
+              <span className="text-accent">location</span>
+              <span className="text-text-dim">: </span>
+              <span className="text-text">Remote / Detroit, MI</span>
+            </motion.p>
+            <motion.p variants={line}>
+              <span className="text-accent">status</span>
+              <span className="text-text-dim">: </span>
+              <span className="text-text">open to full-time roles</span>
+            </motion.p>
+            <motion.p variants={line} className="text-text-dim mb-6">---</motion.p>
+
+            {/* About */}
+            <motion.p variants={line} className="mb-1">
+              <span className="text-text-dim"># </span>
+              <span className="text-text font-bold">About</span>
+            </motion.p>
+            <motion.p variants={line} className="text-text-dim">Building AI-powered tools and systems.</motion.p>
+            <motion.p variants={line} className="text-text-dim">Currently at RediMinds — previously NASA.</motion.p>
+            <motion.p variants={line} className="text-text-dim">WashU grad, Computational Biology, 3.9 GPA.</motion.p>
+            <motion.p variants={line} className="text-text-dim mb-6">7x NCAA All-American swimmer.</motion.p>
+
+            {/* Stack */}
+            <motion.p variants={line} className="mb-1">
+              <span className="text-text-dim"># </span>
+              <span className="text-text font-bold">Stack</span>
+            </motion.p>
+            <motion.p variants={line} className="text-text-dim mb-6">
+              Python · LangGraph · FastAPI · Next.js · RAG · PostgreSQL
+            </motion.p>
+
+            {/* Currently working on */}
+            <motion.p variants={line} className="mb-1">
+              <span className="text-text-dim"># </span>
+              <span className="text-text font-bold">Currently working on</span>
+            </motion.p>
+            <motion.p variants={line} className="text-text-dim">
+              <span className="text-text-dim">- </span>
+              Automated medical necessity review system (RediMinds)
+            </motion.p>
+            <motion.p variants={line} className="text-text-dim mb-6">
+              <span className="text-text-dim">- </span>
+              BalanceWell — fall prevention app for older adults
+            </motion.p>
+
+            {/* Links */}
+            <motion.p variants={line} className="mb-2">
+              <span className="text-text-dim"># </span>
+              <span className="text-text font-bold">Links</span>
+            </motion.p>
+            <motion.div variants={line} className="flex flex-wrap gap-x-6 gap-y-2">
+              <a
+                href="/resume.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-accent hover:underline flex items-center gap-1.5"
+              >
+                <FileDown size={13} />
+                Resume ↗
+              </a>
+              <a
+                href="https://github.com/E10Feng"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-text-dim hover:text-accent transition-colors flex items-center gap-1.5"
+              >
+                <Github size={13} />
+                GitHub ↗
+              </a>
+              <a
+                href="https://linkedin.com/in/ethan-feng-604993221/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-text-dim hover:text-accent transition-colors flex items-center gap-1.5"
+              >
+                <Linkedin size={13} />
+                LinkedIn ↗
+              </a>
+              <a
+                href="mailto:ethan.burr@gmail.com"
+                className="text-text-dim hover:text-accent transition-colors flex items-center gap-1.5"
+              >
+                <Mail size={13} />
+                ethan.burr@gmail.com ↗
+              </a>
+            </motion.div>
+          </motion.div>
+        </motion.div>
+
+        {/* Scroll hint */}
+        <motion.div
+          className="mt-8 text-center"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 1.2, duration: 0.4 }}
+        >
+          <a href="#featured" className="font-code text-xs text-text-dim hover:text-accent transition-colors tracking-widest">
+            ↓ scroll
           </a>
-        </div>
+        </motion.div>
 
       </div>
     </section>

@@ -11,8 +11,9 @@ export const resumeItems: ResumeItem[] = [
     location: "detroit, mi || remote",
     description: [
       "leading development of an automated worker's compensation medical necessity review system using hierarchical RAG and agent frameworks, improving review speed and consistency",
+      "integrated chatbot agent with vectorless RAG architecture into worker's compensation UI, reducing case workflows from weeks to days",
     ],
-    technologies: ["python", "postgres", "gcp", "vertexai", "google adk"],
+    technologies: ["python", "postgres", "gcp", "vertexai", "google adk", "flask"],
   },
   {
     id: "nasa-intern",
@@ -78,6 +79,7 @@ export const resumeItems: ResumeItem[] = [
     endDate: "may 2026",
     location: "st. louis, mo",
     description: [
+      "3.9 cumulative gpa",
       "minor in computer science",
       "d3 varsity swimming (7x ncaa all-american)",
       "beyond boundaries interdisciplinary studies",

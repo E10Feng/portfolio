@@ -1,14 +1,12 @@
 import Link from 'next/link'
-import { ArrowLeft } from 'lucide-react'
 
 export default function BackLink() {
   return (
     <Link
       href="/thoughts"
-      className="inline-flex items-center gap-2 text-zinc-400 hover:text-zinc-100 transition-colors text-sm mb-8"
+      className="font-sans text-sm text-text-dim hover:text-accent transition-colors mb-8 inline-block"
     >
-      <ArrowLeft size={16} />
-      all thoughts
+      ← all thoughts
     </Link>
   )
 }

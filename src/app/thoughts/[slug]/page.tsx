@@ -9,23 +9,18 @@ interface PageProps {
 }
 
 export async function generateStaticParams() {
-  const thoughts = getAllThoughts()
-  return thoughts.map(thought => ({ slug: thought.slug }))
+  return getAllThoughts().map(t => ({ slug: t.slug }))
 }
 
 function formatDate(dateStr: string): string {
-  const date = new Date(dateStr)
-  return date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })
+  return new Date(dateStr).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })
 }
 
 export async function generateMetadata({ params }: PageProps) {
   const { slug } = await params
   const thought = getThoughtBySlug(slug)
   if (!thought) return {}
-  return {
-    title: `${thought.title} — My Thoughts`,
-    description: thought.excerpt,
-  }
+  return { title: `${thought.title} — My Thoughts`, description: thought.excerpt }
 }
 
 export default async function ThoughtPostPage({ params }: PageProps) {
@@ -34,25 +29,21 @@ export default async function ThoughtPostPage({ params }: PageProps) {
   if (!thought) notFound()
 
   return (
-    <main className="min-h-screen bg-zinc-950 pt-24 pb-16 px-6">
+    <main className="min-h-screen bg-canvas pt-24 pb-16 px-6">
       <article className="max-w-2xl mx-auto">
         <BackLink />
-
-        <header className="mb-10">
-          <h1 className="text-3xl md:text-4xl font-bold text-zinc-50 mb-4 leading-tight">
+        <header className="mb-12">
+          <h1 className="font-display font-bold text-4xl md:text-5xl text-text mb-5 leading-tight">
             {thought.title}
           </h1>
           <div className="flex flex-wrap items-center gap-3">
-            <time className="text-zinc-500">{formatDate(thought.date)}</time>
-            <div className="flex gap-1.5 flex-wrap">
-              {thought.tags.map(tag => (
-                <Tag key={tag} label={tag} />
-              ))}
+            <time className="font-code text-xs text-text-dim">{formatDate(thought.date)}</time>
+            <div className="flex gap-2 flex-wrap">
+              {thought.tags.map(tag => <Tag key={tag} label={tag} />)}
             </div>
           </div>
         </header>
-
-        <div className="prose prose-invert prose-zinc prose-headings:text-zinc-100 prose-p:text-zinc-300 prose-a:text-indigo-400 prose-code:text-zinc-200 prose-code:bg-zinc-800 prose-code:px-1 prose-code:py-0.5 prose-code:rounded prose-pre:bg-zinc-900 prose-pre:border prose-pre:border-zinc-800 max-w-none">
+        <div className="prose max-w-none [&_p]:font-sans [&_p]:text-text-dim [&_p]:leading-relaxed [&_h2]:font-display [&_h2]:font-bold [&_h2]:text-text [&_h3]:font-display [&_h3]:font-bold [&_h3]:text-text [&_a]:text-accent [&_a]:no-underline [&_a:hover]:underline [&_code]:font-code [&_code]:text-text-dim [&_code]:bg-surface [&_code]:px-1.5 [&_code]:py-0.5 [&_code]:rounded [&_pre]:bg-surface [&_pre]:border [&_pre]:border-border [&_pre]:rounded-lg">
           <MDXRemote source={thought.content} />
         </div>
       </article>

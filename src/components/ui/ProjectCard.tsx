@@ -2,7 +2,7 @@
 
 import { useRef } from "react"
 import { useRouter } from "next/navigation"
-import { Github, ExternalLink, FileText, ArrowRight } from "lucide-react"
+import { Github, ExternalLink, FileText } from "lucide-react"
 import { ProjectItem } from "@/types"
 import { useCardTransition } from "@/components/animations/TransitionContext"
 import TechTag from "./TechTag"
@@ -33,20 +33,29 @@ export default function ProjectCard({ project }: Props) {
   return (
     <div
       ref={cardRef}
-      className="flex flex-col h-full bg-zinc-900 border border-zinc-800 rounded-xl p-6 hover:border-zinc-700 transition-colors"
+      className="group flex flex-col h-full border border-border hover:border-border-bright rounded-sm p-6 transition-colors"
     >
       <div className="flex items-start justify-between gap-4 mb-3">
-        <h3 className="font-semibold text-zinc-50 leading-snug">{project.title}</h3>
-        <span className="text-xs text-zinc-500 shrink-0">{project.year}</span>
+        <a
+          href={`/projects/${project.id}`}
+          onClick={handleReadMore}
+          className="font-display font-semibold text-lg text-text leading-snug group-hover:text-accent transition-colors cursor-pointer"
+        >
+          {project.title}
+        </a>
+        <span className="font-code text-xs text-text-dim shrink-0">{project.year}</span>
       </div>
-      <p className="text-sm text-zinc-400 leading-relaxed flex-1 mb-4">
+
+      <p className="font-sans text-sm text-text-dim leading-relaxed flex-1 mb-4">
         {project.description}
       </p>
+
       <div className="flex flex-wrap gap-1.5 mb-4">
         {project.techStack.map((tech) => (
           <TechTag key={tech} label={tech} />
         ))}
       </div>
+
       <div className="flex items-center justify-between gap-4">
         <div className="flex items-center gap-4">
           {project.links.github && (
@@ -54,9 +63,9 @@ export default function ProjectCard({ project }: Props) {
               href={project.links.github}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-1.5 text-xs text-zinc-400 hover:text-zinc-50 transition-colors"
+              className="font-sans text-xs text-text-dim hover:text-accent transition-colors flex items-center gap-1.5"
             >
-              <Github size={14} />
+              <Github size={12} />
               code
             </a>
           )}
@@ -65,9 +74,9 @@ export default function ProjectCard({ project }: Props) {
               href={project.links.paper}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-1.5 text-xs text-zinc-400 hover:text-zinc-50 transition-colors"
+              className="font-sans text-xs text-text-dim hover:text-accent transition-colors flex items-center gap-1.5"
             >
-              <FileText size={14} />
+              <FileText size={12} />
               paper
             </a>
           )}
@@ -76,9 +85,9 @@ export default function ProjectCard({ project }: Props) {
               href={project.links.demo}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-1.5 text-xs text-zinc-400 hover:text-zinc-50 transition-colors"
+              className="font-sans text-xs text-text-dim hover:text-accent transition-colors flex items-center gap-1.5"
             >
-              <ExternalLink size={14} />
+              <ExternalLink size={12} />
               demo
             </a>
           )}
@@ -86,9 +95,9 @@ export default function ProjectCard({ project }: Props) {
         <a
           href={`/projects/${project.id}`}
           onClick={handleReadMore}
-          className="flex items-center gap-1 text-xs text-zinc-500 hover:text-zinc-200 transition-colors shrink-0 cursor-pointer"
+          className="font-sans text-xs text-text-dim hover:text-accent transition-colors shrink-0 cursor-pointer"
         >
-          read more <ArrowRight size={12} />
+          read more →
         </a>
       </div>
     </div>

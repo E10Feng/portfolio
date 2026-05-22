@@ -3,7 +3,20 @@
 @variant dark (&:where(.dark, .dark *));
 
 @theme inline {
-  --color-accent: #6366f1;
+  /* True black + orange accent palette */
+  --color-canvas: #000000;
+  --color-surface: #0d0d0d;
+  --color-surface-2: #171717;
+  --color-text: #ffffff;
+  --color-text-dim: #666666;
+  --color-accent: #f97316;
+  --color-border: #1f1f1f;
+  --color-border-bright: #333333;
+
+  /* Font families — CSS vars injected by next/font onto <html> */
+  --font-family-sans: var(--font-sans), system-ui, sans-serif;
+  --font-family-display: var(--font-display), system-ui, sans-serif;
+  --font-family-code: var(--font-mono), monospace;
 }
 
 html {
@@ -11,5 +24,7 @@ html {
 }
 
 body {
-  @apply bg-zinc-950 text-zinc-50;
+  background-color: #000000;
+  color: #ffffff;
+  font-family: var(--font-sans), system-ui, sans-serif;
 }

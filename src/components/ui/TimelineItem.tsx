@@ -2,16 +2,15 @@
 
 import { useRef } from "react"
 import { useRouter } from "next/navigation"
-import { ArrowRight } from "lucide-react"
 import { ResumeItem, ResumeItemType } from "@/types"
 import { useCardTransition } from "@/components/animations/TransitionContext"
 import TechTag from "./TechTag"
 
 const dotColor: Record<ResumeItemType, string> = {
-  education: "bg-indigo-500",
-  work: "bg-emerald-500",
-  research: "bg-amber-500",
-  internship: "bg-sky-500",
+  education: "bg-accent",
+  work: "bg-accent",
+  research: "bg-accent",
+  internship: "bg-accent",
 }
 
 const typeLabel: Record<ResumeItemType, string> = {
@@ -50,37 +49,41 @@ export default function TimelineItem({ item }: Props) {
 
   return (
     <div className="relative pl-8">
-      {/* dot */}
-      <span
-        className={`absolute left-0 top-1.5 w-3 h-3 rounded-full ${dotColor[item.type[0]]} ring-4 ring-zinc-950`}
-      />
-      {/* card */}
+      {/* Dot */}
+      <span className={`absolute left-0 top-2.5 w-2.5 h-2.5 rounded-full ${dotColor[item.type[0]]} ring-4 ring-canvas`} />
+
+      {/* Card */}
       <div
         ref={cardRef}
-        className="bg-zinc-900 border border-zinc-800 rounded-xl p-7"
+        className="relative group bg-surface border border-border hover:border-border-bright rounded-lg p-6 overflow-hidden transition-colors"
       >
-        <div className="flex flex-wrap items-center gap-2 mb-2">
+        <div className="absolute top-0 left-0 right-0 h-0.5 bg-accent opacity-0 group-hover:opacity-100 transition-opacity" />
+
+        <div className="flex flex-wrap items-center gap-3 mb-2">
           {item.type.map((t) => (
-            <span key={t} className="text-xs font-medium px-2.5 py-1 rounded-full border border-zinc-700 text-zinc-400">
-              {typeLabel[t]}
-            </span>
+            <span key={t} className="font-code text-xs text-text-dim">{typeLabel[t]}</span>
           ))}
-          <span className="text-sm text-zinc-500">
+          <span className="font-code text-xs text-text-dim">
             {item.startDate} — {item.endDate}
           </span>
         </div>
-        <h3 className="text-xl font-semibold text-zinc-50 mb-0.5">{item.role}</h3>
-        <p className="text-base text-indigo-400 mb-4">
+
+        <h3 className="font-display font-bold text-xl text-text mb-0.5 group-hover:text-accent transition-colors">
+          {item.role}
+        </h3>
+        <p className="font-sans text-sm text-accent mb-4">
           {item.organization} · {item.location}
         </p>
+
         <ul className="space-y-2 mb-4">
           {item.description.map((bullet, i) => (
-            <li key={i} className="text-base text-zinc-400 flex gap-2.5">
-              <span className="text-zinc-600 shrink-0">–</span>
+            <li key={i} className="font-sans text-sm text-text-dim flex gap-2.5">
+              <span className="text-border-bright shrink-0 mt-0.5">—</span>
               {bullet}
             </li>
           ))}
         </ul>
+
         {item.technologies && (
           <div className="flex flex-wrap gap-1.5 mb-3">
             {item.technologies.map((tech) => (
@@ -88,13 +91,14 @@ export default function TimelineItem({ item }: Props) {
             ))}
           </div>
         )}
+
         <div className="flex justify-end">
           <a
             href={`/resume/${item.id}`}
             onClick={handleReadMore}
-            className="flex items-center gap-1 text-xs text-zinc-500 hover:text-zinc-200 transition-colors cursor-pointer"
+            className="font-sans text-xs text-text-dim hover:text-accent transition-colors cursor-pointer"
           >
-            read more <ArrowRight size={12} />
+            read more →
           </a>
         </div>
       </div>

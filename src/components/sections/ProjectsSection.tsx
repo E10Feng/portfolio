@@ -5,19 +5,20 @@ import FadeInWhenVisible from "@/components/animations/FadeInWhenVisible"
 
 export default function ProjectsSection() {
   return (
-    <section id="projects" className="py-24 px-6">
-      <div className="max-w-5xl mx-auto">
+    <section id="projects" className="py-24 px-6 bg-canvas">
+      <div className="max-w-6xl mx-auto">
         <SectionHeading
+          number="02"
           title="projects"
-          subtitle="a selection of AI, healthcare research, and backend engineering work"
+          subtitle="AI, healthcare research, and backend engineering work"
         />
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           {[...projects].sort((a, b) => {
             const aVal = a.date ?? `${a.year ?? 0}-01-01`
             const bVal = b.date ?? `${b.year ?? 0}-01-01`
             return bVal.localeCompare(aVal)
           }).map((project, index) => (
-            <FadeInWhenVisible key={project.id} delay={index * 0.1}>
+            <FadeInWhenVisible key={project.id} delay={index * 0.05}>
               <ProjectCard project={project} />
             </FadeInWhenVisible>
           ))}

@@ -6,19 +6,22 @@ const navLinks = [
   { label: "projects", href: "/#projects" },
   { label: "resume", href: "/#resume" },
   { label: "contact", href: "/#contact" },
-  { label: "my thoughts", href: "/thoughts" },
+  { label: "thoughts", href: "/thoughts" },
 ]
 
 export default function Navbar() {
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-zinc-950/80 backdrop-blur-sm border-b border-zinc-800">
-      <nav className="max-w-5xl mx-auto px-6 h-16 flex items-center justify-center">
-        <ul className="flex items-center gap-6">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-canvas/90 backdrop-blur-md border-b border-border">
+      <nav className="max-w-6xl mx-auto px-6 h-14 flex items-center justify-between">
+        <a href="/#hero" className="font-display font-bold text-lg text-text hover:text-accent transition-colors">
+          e10
+        </a>
+        <ul className="hidden md:flex items-center gap-8">
           {navLinks.map((link) => (
             <li key={link.href}>
               <a
                 href={link.href}
-                className="text-sm text-zinc-400 hover:text-zinc-50 transition-colors"
+                className="font-sans text-sm text-text-dim hover:text-text transition-colors"
               >
                 {link.label}
               </a>
