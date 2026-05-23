@@ -23,7 +23,7 @@ export default async function ProjectDetailPage({ params }: Props) {
       <FloatingBubbles tags={project.techStack} />
       <PageTransition>
         <div className="max-w-3xl mx-auto">
-          <Link href="/#projects" className="font-sans text-sm text-text-dim hover:text-accent transition-colors mb-10 inline-block">
+          <Link href="/?tab=projects" className="font-sans text-sm text-text-dim hover:text-accent transition-colors mb-10 inline-block">
             ← back to projects
           </Link>
 

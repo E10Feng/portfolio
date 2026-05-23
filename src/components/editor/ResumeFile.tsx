@@ -1,6 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion"
+import Link from "next/link"
 import { resumeItems } from "@/data/resume"
 import { editorContainer, editorLine } from "./animations"
 
@@ -27,12 +28,12 @@ export default function ResumeFile() {
           {/* Section heading */}
           <p className="mb-1">
             <span className="text-text-dim"># </span>
-            <a
+            <Link
               href={`/resume/${item.id}`}
               className="text-text font-bold hover:text-accent transition-colors"
             >
               {item.organization}
-            </a>
+            </Link>
           </p>
           {/* Role + dates */}
           <p className="text-text-dim mb-1">

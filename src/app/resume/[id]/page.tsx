@@ -26,7 +26,7 @@ export default async function ResumeDetailPage({ params }: Props) {
       {item.technologies && <FloatingBubbles tags={item.technologies} />}
       <PageTransition>
         <div className="max-w-3xl mx-auto">
-          <Link href="/#resume" className="font-sans text-sm text-text-dim hover:text-accent transition-colors mb-10 inline-block">
+          <Link href="/?tab=resume" className="font-sans text-sm text-text-dim hover:text-accent transition-colors mb-10 inline-block">
             ← back to resume
           </Link>
 
