@@ -1,5 +1,6 @@
 "use client"
 
+import Link from "next/link"
 import { motion } from "framer-motion"
 import { Github, Linkedin, Mail, BookOpen } from "lucide-react"
 import { editorContainer, editorLine } from "./animations"
@@ -54,13 +55,13 @@ export default function ContactFile() {
           <Linkedin size={13} />
           linkedin.com/in/ethan-feng-604993221 ↗
         </a>
-        <a
+        <Link
           href="/thoughts"
           className="text-text-dim hover:text-accent transition-colors flex items-center gap-2"
         >
           <BookOpen size={13} />
           thoughts ↗
-        </a>
+        </Link>
       </motion.div>
     </motion.div>
   )

@@ -47,7 +47,6 @@ const variants = {
 
 export default function FeaturedSection() {
   const { activeTab } = useTab()
-  if (activeTab !== "ethan") return null
 
   const [[index, dir], setSlide] = useState([0, 1])
   const [paused, setPaused] = useState(false)
@@ -61,6 +60,8 @@ export default function FeaturedSection() {
     }, INTERVAL_MS)
     return () => clearInterval(id)
   }, [paused])
+
+  if (activeTab !== "ethan") return null
 
   const project = FEATURED[index]
 
