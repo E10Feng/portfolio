@@ -4,6 +4,7 @@ import { useState, useEffect, useCallback } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import FadeInWhenVisible from "@/components/animations/FadeInWhenVisible"
 import { ExternalLink, Github } from "lucide-react"
+import { useTab } from "@/context/TabContext"
 
 const FEATURED = [
   {
@@ -45,6 +46,9 @@ const variants = {
 }
 
 export default function FeaturedSection() {
+  const { activeTab } = useTab()
+  if (activeTab !== "ethan") return null
+
   const [[index, dir], setSlide] = useState([0, 1])
   const [paused, setPaused] = useState(false)
 

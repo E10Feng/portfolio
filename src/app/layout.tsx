@@ -1,10 +1,11 @@
 import type { Metadata } from "next"
 import { Syne, DM_Sans, Fira_Code } from "next/font/google"
 import "./globals.css"
-import Navbar from "@/components/layout/Navbar"
+import VSCodeTabBar from "@/components/layout/VSCodeTabBar"
 import Footer from "@/components/layout/Footer"
 import { TransitionProvider } from "@/components/animations/TransitionContext"
 import ExpandOverlay from "@/components/animations/ExpandOverlay"
+import { TabProvider } from "@/context/TabContext"
 
 const display = Syne({
   subsets: ["latin"],
@@ -47,12 +48,14 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" className={`dark ${display.variable} ${sans.variable} ${mono.variable}`}>
       <body>
-        <TransitionProvider>
-          <ExpandOverlay />
-          <Navbar />
-          {children}
-          <Footer />
-        </TransitionProvider>
+        <TabProvider>
+          <TransitionProvider>
+            <ExpandOverlay />
+            <VSCodeTabBar />
+            {children}
+            <Footer />
+          </TransitionProvider>
+        </TabProvider>
       </body>
     </html>
   )
