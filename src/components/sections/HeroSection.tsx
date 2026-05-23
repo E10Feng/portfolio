@@ -53,7 +53,7 @@ export default function HeroSection() {
             <motion.p variants={line}>
               <span className="text-accent">role</span>
               <span className="text-text-dim">: </span>
-              <span className="text-text">AI Engineer · Builder · D3 Swammer</span>
+              <span className="text-text">AI Engineer · Biologist · D3 Swammer</span>
             </motion.p>
             <motion.p variants={line}>
               <span className="text-accent">location</span>
