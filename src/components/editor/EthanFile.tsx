@@ -65,9 +65,13 @@ export default function EthanFile() {
         <span className="text-text-dim">- </span>
         Automated medical necessity review system (RediMinds)
       </motion.p>
-      <motion.p variants={editorLine} className="text-text-dim mb-6">
+      <motion.p variants={editorLine} className="text-text-dim">
         <span className="text-text-dim">- </span>
         BalanceWell — fall prevention app for older adults
+      </motion.p>
+      <motion.p variants={editorLine} className="text-text-dim mb-6">
+        <span className="text-text-dim">- </span>
+        western blot mcp — AI-powered western blot image analyzer
       </motion.p>
 
       {/* Links */}
