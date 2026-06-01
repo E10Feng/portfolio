@@ -2,6 +2,24 @@ import { ProjectItem } from "@/types"
 
 export const projects: ProjectItem[] = [
   {
+    id: "western-blot-mcp",
+    title: "western blot mcp",
+    description:
+      "an mcp server that plugs into claude desktop to analyze western blot images — returns structured json with bands, lanes, and qc flags instead of variable prose, with step-by-step reasoning chains for reproducible lab workflows",
+    techStack: ["python", "mcp", "gemini", "litellm", "uv", "pytest"],
+    links: {
+      github: "https://github.com/E10Feng/western-blot-mcp",
+    },
+    featured: false,
+    year: 2026,
+    date: "2026-05-31",
+    content: [
+      { type: "text", content: "Western blot analysis with AI produces inconsistent, hard-to-reproduce results when done ad-hoc — different prompts yield different prose, making batch processing and lab record-keeping unreliable. This MCP server fixes that by wrapping Gemini's vision capabilities in a structured interface that always returns the same JSON schema: bands, lanes, certainty ratings, and QC flags." },
+      { type: "text", content: "Each analysis includes an auditable reasoning chain — a step-by-step array of conclusions the model made — so researchers can validate the logic, not just the output. The QC layer catches overexposure, loading control issues, ghost bands, smile effect, and image integrity problems, and even flags domain-specific pitfalls like GAPDH invalidity in hypoxia studies." },
+      { type: "text", content: "The server supports file paths, URLs, and base64-encoded images as input and runs locally via Claude Desktop with a one-click .mcpb install. Gemini is the default (free via Google AI Studio), with OpenAI, Anthropic, and DeepSeek available through LiteLLM." },
+    ],
+  },
+  {
     id: "balance-well",
     title: "BalanceWell",
     description:
