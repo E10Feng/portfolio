@@ -6,6 +6,7 @@ import FadeInWhenVisible from "@/components/animations/FadeInWhenVisible"
 import { ExternalLink, Github } from "lucide-react"
 import { useTab } from "@/context/TabContext"
 import GlowCard from "@/components/ui/GlowCard"
+import BorderBeamButton from "@/components/kokonut/BorderBeamButton"
 
 const FEATURED = [
   {
@@ -150,26 +151,14 @@ export default function FeaturedSection() {
                   </p>
                   <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                     {project.links.demo && (
-                      <a
-                        href={project.links.demo.href}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="font-display font-semibold text-sm px-6 py-3 bg-accent text-canvas rounded-md hover:bg-accent/90 transition-colors flex items-center gap-2"
-                      >
-                        <ExternalLink size={15} />
+                      <BorderBeamButton href={project.links.demo.href} variant="solid" icon={<ExternalLink size={15} />}>
                         {project.links.demo.label}
-                      </a>
+                      </BorderBeamButton>
                     )}
                     {project.links.github && (
-                      <a
-                        href={project.links.github.href}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="font-display font-medium text-sm px-6 py-3 border border-border-bright text-text hover:border-accent/50 rounded-md transition-colors flex items-center gap-2"
-                      >
-                        <Github size={15} />
+                      <BorderBeamButton href={project.links.github.href} variant="outline" icon={<Github size={15} />}>
                         {project.links.github.label}
-                      </a>
+                      </BorderBeamButton>
                     )}
                   </div>
                 </div>
