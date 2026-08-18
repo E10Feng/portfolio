@@ -5,6 +5,7 @@ import VSCodeTabBar from "@/components/layout/VSCodeTabBar"
 import Footer from "@/components/layout/Footer"
 import { TransitionProvider } from "@/components/animations/TransitionContext"
 import ExpandOverlay from "@/components/animations/ExpandOverlay"
+import ScanlineOverlay from "@/components/animations/ScanlineOverlay"
 import { TabProvider } from "@/context/TabContext"
 
 const display = Syne({
@@ -50,6 +51,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body>
         <TabProvider>
           <TransitionProvider>
+            <ScanlineOverlay />
             <ExpandOverlay />
             <VSCodeTabBar />
             {children}
