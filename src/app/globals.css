@@ -13,6 +13,14 @@
   --color-border: #1f1f1f;
   --color-border-bright: #333333;
 
+  /* Glow layer — intensity variants of the existing accent, not new hues */
+  --glow-soft: rgba(249, 115, 22, 0.10);
+  --glow-medium: rgba(249, 115, 22, 0.22);
+  --glow-strong: rgba(249, 115, 22, 0.4);
+
+  /* Atmosphere — decorative CRT-phosphor tint, never used as a UI/text color */
+  --scanline-tint: rgba(80, 255, 150, 0.035);
+
   /* Font families — CSS vars injected by next/font onto <html> */
   --font-family-sans: var(--font-sans), system-ui, sans-serif;
   --font-family-display: var(--font-display), system-ui, sans-serif;
@@ -27,4 +35,29 @@ body {
   background-color: #000000;
   color: #ffffff;
   font-family: var(--font-sans), system-ui, sans-serif;
+}
+
+.scanline-overlay {
+  background:
+    repeating-linear-gradient(
+      0deg,
+      var(--scanline-tint) 0px,
+      var(--scanline-tint) 1px,
+      transparent 1px,
+      transparent 3px
+    ),
+    radial-gradient(ellipse at center, transparent 55%, rgba(0, 0, 0, 0.35) 100%);
+  background-size: 100% 100%, 100% 100%;
+  animation: scanline-drift 9s linear infinite;
+}
+
+@keyframes scanline-drift {
+  0% { background-position: 0 0, 0 0; }
+  100% { background-position: 0 48px, 0 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scanline-overlay {
+    animation: none;
+  }
 }
