@@ -5,10 +5,12 @@ import { motion, useScroll } from "motion/react"
 import Link from "next/link"
 import { resumeItems } from "@/data/resume"
 import { editorContainer, editorLine } from "./animations"
+import { prefersReducedMotion } from "@/lib/motionPreferences"
 
 export default function ResumeFile() {
   const listRef = useRef<HTMLDivElement>(null)
   const { scrollYProgress } = useScroll({ target: listRef, offset: ["start center", "end center"] })
+  const reduced = prefersReducedMotion()
 
   return (
     <motion.div
@@ -31,7 +33,7 @@ export default function ResumeFile() {
         <div className="absolute left-0 top-0 bottom-0 w-px bg-border" />
         <motion.div
           className="absolute left-0 top-0 bottom-0 w-px bg-accent origin-top"
-          style={{ scaleY: scrollYProgress }}
+          style={reduced ? { scaleY: 1 } : { scaleY: scrollYProgress }}
         />
 
         {resumeItems.map((item) => (

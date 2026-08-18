@@ -2,6 +2,7 @@
 
 import { useRef } from "react"
 import { useMotionValue, useSpring, useMotionTemplate } from "motion/react"
+import { prefersReducedMotion } from "@/lib/motionPreferences"
 
 export function useGlowPointer() {
   const ref = useRef<HTMLDivElement>(null)
@@ -13,7 +14,7 @@ export function useGlowPointer() {
   const background = useMotionTemplate`radial-gradient(180px circle at ${glowX}px ${glowY}px, var(--glow-medium), transparent 70%)`
 
   const onPointerMove = (e: React.PointerEvent<HTMLDivElement>) => {
-    if (!ref.current) return
+    if (prefersReducedMotion() || !ref.current) return
     const rect = ref.current.getBoundingClientRect()
     x.set(e.clientX - rect.left)
     y.set(e.clientY - rect.top)

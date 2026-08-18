@@ -7,6 +7,7 @@ import { ExternalLink, Github } from "lucide-react"
 import { useTab } from "@/context/TabContext"
 import GlowCard from "@/components/ui/GlowCard"
 import BorderBeamButton from "@/components/kokonut/BorderBeamButton"
+import { prefersReducedMotion } from "@/lib/motionPreferences"
 
 const FEATURED = [
   {
@@ -56,6 +57,7 @@ export default function FeaturedSection() {
   const sectionRef = useRef<HTMLElement>(null)
   const { scrollYProgress } = useScroll({ target: sectionRef, offset: ["start end", "end start"] })
   const imgY = useTransform(scrollYProgress, [0, 1], [-24, 24])
+  const reduced = prefersReducedMotion()
 
   const go = useCallback((next: number, d: number) => { setSlide([next, d]) }, [])
 
@@ -105,7 +107,7 @@ export default function FeaturedSection() {
                 </h3>
 
                 <GlowCard className="relative rounded-xl overflow-hidden border border-border mb-10">
-                  <motion.div style={{ y: imgY }}>
+                  <motion.div style={reduced ? undefined : { y: imgY }}>
                     {project.image ? (
                       <img
                         src={project.image}

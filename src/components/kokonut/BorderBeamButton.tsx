@@ -15,7 +15,7 @@ export default function BorderBeamButton({ href, children, variant = "solid", ic
   const reduced = prefersReducedMotion()
 
   const base = "relative inline-flex items-center gap-2 px-6 py-3 rounded-md font-display font-semibold text-sm isolate overflow-hidden"
-  const fill = variant === "solid" ? "bg-accent text-canvas" : "text-text"
+  const fill = variant === "solid" ? "bg-canvas text-canvas" : "text-text"
   const innerFill = variant === "solid" ? "bg-accent" : "bg-canvas"
   const outlineBorder = variant === "outline" ? "border border-border-bright" : ""
 

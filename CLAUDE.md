@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Overview
 
-Personal portfolio for E10 Feng, an AI and Systems Engineering intern. The site showcases projects (RAG pipelines, LangGraph tooling, ML research, browser extensions), resume/work history (including NASA and RediMinds), and a blog ("My Thoughts"). The stack is Next.js + Tailwind + Framer Motion, deployed on Vercel.
+Personal portfolio for E10 Feng, an AI and Systems Engineering intern. The site showcases projects (RAG pipelines, LangGraph tooling, ML research, browser extensions), resume/work history (including NASA and RediMinds), and a blog ("My Thoughts"). The stack is Next.js + Tailwind + Motion, deployed on Vercel.
 
 ## Workflow
 
@@ -43,6 +43,6 @@ This is a Next.js 16 App Router portfolio site for E10 Feng. It is deployed on V
 - `ExpandOverlay` — fixed overlay that reads the stored rect and animates an expand from that position. Wraps a snapshot of the card content so the animation looks like the card expanding into the page.
 - `PageTransition` — wraps the destination page to fade in after the overlay finishes.
 
-**Testing**: Vitest with node environment. Only `src/lib/thoughts.test.ts` exists.
+**Testing**: Vitest with node environment. Three test files exist: `src/lib/thoughts.test.ts`, `src/lib/motionPreferences.test.ts`, and `src/lib/bootSession.test.ts` — all pure-function tests in the same node-environment pattern.
 
 **Styling**: Tailwind CSS v4 (PostCSS plugin), dark mode forced via `<html class="dark">`. Color palette is zinc-based throughout.
