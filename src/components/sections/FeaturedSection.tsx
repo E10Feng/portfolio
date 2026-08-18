@@ -1,10 +1,11 @@
 "use client"
 
-import { useState, useEffect, useCallback } from "react"
-import { motion, AnimatePresence } from "motion/react"
+import { useState, useEffect, useCallback, useRef } from "react"
+import { motion, AnimatePresence, useScroll, useTransform } from "motion/react"
 import FadeInWhenVisible from "@/components/animations/FadeInWhenVisible"
 import { ExternalLink, Github } from "lucide-react"
 import { useTab } from "@/context/TabContext"
+import GlowCard from "@/components/ui/GlowCard"
 
 const FEATURED = [
   {
@@ -51,6 +52,10 @@ export default function FeaturedSection() {
   const [[index, dir], setSlide] = useState([0, 1])
   const [paused, setPaused] = useState(false)
 
+  const sectionRef = useRef<HTMLElement>(null)
+  const { scrollYProgress } = useScroll({ target: sectionRef, offset: ["start end", "end start"] })
+  const imgY = useTransform(scrollYProgress, [0, 1], [-24, 24])
+
   const go = useCallback((next: number, d: number) => { setSlide([next, d]) }, [])
 
   useEffect(() => {
@@ -66,7 +71,7 @@ export default function FeaturedSection() {
   const project = FEATURED[index]
 
   return (
-    <section id="featured" className="py-24 px-6 bg-canvas border-y border-border">
+    <section id="featured" ref={sectionRef} className="py-24 px-6 bg-canvas border-y border-border">
       <div className="max-w-6xl mx-auto">
         <FadeInWhenVisible>
           <div className="mb-12 flex items-start gap-4">
@@ -98,29 +103,31 @@ export default function FeaturedSection() {
                   {project.title}
                 </h3>
 
-                <div className="relative rounded-xl overflow-hidden border border-border mb-10">
-                  {project.image ? (
-                    <img
-                      src={project.image}
-                      alt={project.title}
-                      className="w-full object-cover"
-                      style={{ aspectRatio: "16/7", maxHeight: "520px" }}
-                    />
-                  ) : (
-                    <div
-                      className="w-full flex items-center justify-center bg-surface-2"
-                      style={{ aspectRatio: "16/7", maxHeight: "520px" }}
-                    >
-                      <div className="text-center">
-                        <p className="font-display font-bold text-6xl text-border-bright tracking-tighter select-none">
-                          {project.title}
-                        </p>
-                        <p className="font-code text-xs text-text-dim mt-4 tracking-widest uppercase">
-                          {project.caption}
-                        </p>
+                <GlowCard className="relative rounded-xl overflow-hidden border border-border mb-10">
+                  <motion.div style={{ y: imgY }}>
+                    {project.image ? (
+                      <img
+                        src={project.image}
+                        alt={project.title}
+                        className="w-full object-cover"
+                        style={{ aspectRatio: "16/7", maxHeight: "520px" }}
+                      />
+                    ) : (
+                      <div
+                        className="w-full flex items-center justify-center bg-surface-2"
+                        style={{ aspectRatio: "16/7", maxHeight: "520px" }}
+                      >
+                        <div className="text-center">
+                          <p className="font-display font-bold text-6xl text-border-bright tracking-tighter select-none">
+                            {project.title}
+                          </p>
+                          <p className="font-code text-xs text-text-dim mt-4 tracking-widest uppercase">
+                            {project.caption}
+                          </p>
+                        </div>
                       </div>
-                    </div>
-                  )}
+                    )}
+                  </motion.div>
 
                   <div className="absolute top-4 left-4 flex gap-2">
                     {project.badges.map(b => (
@@ -135,7 +142,7 @@ export default function FeaturedSection() {
                     <p className="font-code text-xs text-text-dim">{project.subtitle}</p>
                     <p className="font-code text-xs text-text-dim">{project.caption}</p>
                   </div>
-                </div>
+                </GlowCard>
 
                 <div className="text-center max-w-2xl mx-auto">
                   <p className="font-sans text-text-dim text-base md:text-lg leading-relaxed mb-8">

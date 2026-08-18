@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import Tag from '@/components/ui/Tag'
+import GlowCard from '@/components/ui/GlowCard'
 import { Thought } from '@/lib/thoughts'
 
 function formatDate(dateStr: string): string {
@@ -9,7 +10,7 @@ function formatDate(dateStr: string): string {
 export default function ThoughtCard({ thought }: { thought: Thought }) {
   return (
     <Link href={`/thoughts/${thought.slug}`} className="group block">
-      <article className="relative bg-surface border border-border hover:border-border-bright rounded-lg p-6 transition-colors overflow-hidden">
+      <GlowCard className="bg-surface border border-border hover:border-border-bright rounded-lg p-6 transition-colors overflow-hidden">
         <div className="absolute top-0 left-0 right-0 h-0.5 bg-accent opacity-0 group-hover:opacity-100 transition-opacity" />
         <div className="flex items-center gap-3 mb-3">
           <time className="font-code text-xs text-text-dim">{formatDate(thought.date)}</time>
@@ -24,7 +25,7 @@ export default function ThoughtCard({ thought }: { thought: Thought }) {
         <div className="mt-4 font-sans text-xs text-text-dim group-hover:text-accent transition-colors">
           read more →
         </div>
-      </article>
+      </GlowCard>
     </Link>
   )
 }
