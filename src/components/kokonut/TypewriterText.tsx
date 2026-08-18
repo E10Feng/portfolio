@@ -1,7 +1,7 @@
 "use client"
 
 import { useEffect, useRef, useState } from "react"
-import { animate } from "animejs"
+import { animate, steps } from "animejs"
 import { prefersReducedMotion } from "@/lib/motionPreferences"
 
 interface Props {
@@ -45,7 +45,7 @@ export default function TypewriterText({ text, speedMs = 18, onComplete, classNa
       duration: 500,
       loop: true,
       alternate: true,
-      ease: "steps(1)",
+      ease: steps(1),
     })
     const cleanup = () => {
       animation.pause()
