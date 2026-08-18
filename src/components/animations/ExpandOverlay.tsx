@@ -2,6 +2,7 @@
 
 import { motion } from "motion/react"
 import { useCardTransition } from "./TransitionContext"
+import GlitchBurst from "./GlitchBurst"
 
 const typeLabel: Record<string, string> = {
   education: "education",
@@ -22,6 +23,7 @@ export default function ExpandOverlay() {
 
   return (
     <>
+      <GlitchBurst active={phase === "expanding"} />
       <motion.div
         className="fixed inset-0 pointer-events-none"
         style={{ zIndex: 99, background: "rgba(0,0,0,0.92)" }}
