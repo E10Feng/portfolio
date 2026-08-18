@@ -24,7 +24,7 @@ npx vitest run src/lib/thoughts.test.ts  # run a single test file
 
 This is a Next.js 16 App Router portfolio site for E10 Feng. It is deployed on Vercel.
 
-**Single-page home** (`src/app/page.tsx`): Five sections stacked vertically — `HeroSection`, `FeaturedSection`, `ProjectsSection`, `ResumeSection`, `ContactSection`. The Navbar and Footer are in the root layout.
+**Single-page home** (`src/app/page.tsx`): `HeroSection` (a tab-switched fake code editor — `VSCodeTabBar` swaps `ETHAN.md`/`PROJECTS.md`/`RESUME.md`/`CONTACT.md` content via `TabContext`) followed by `FeaturedSection` (a project carousel, shown only on the `ETHAN.md` tab). `VSCodeTabBar` and `Footer` are mounted in the root layout; there is no separate `Navbar` or standalone scrolling `ProjectsSection`/`ResumeSection`/`ContactSection` — those were superseded by the tab/editor system and removed.
 
 **Dynamic routes**:
 - `/projects/[id]` — detail page for a project, statically generated from `src/data/projects.ts`
