@@ -25,6 +25,7 @@ export default function HeroSection() {
   const [booting, setBooting] = useState(false)
 
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect -- intentional: avoids SSR/hydration mismatch, sessionStorage only exists client-side
     setBooting(!hasBootPlayed())
   }, [])
 
