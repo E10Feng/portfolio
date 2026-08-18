@@ -1,6 +1,6 @@
 "use client"
 
-import { motion } from "framer-motion"
+import { motion } from "motion/react"
 
 // Positions are relative to viewport center using calc().
 // Content column is max-w-3xl (768px), so content edges are at calc(50% ± 384px).

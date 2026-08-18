@@ -1,6 +1,6 @@
 "use client"
 
-import { motion } from "framer-motion"
+import { motion } from "motion/react"
 import { useTab } from "@/context/TabContext"
 import EthanFile from "@/components/editor/EthanFile"
 import ProjectsFile from "@/components/editor/ProjectsFile"

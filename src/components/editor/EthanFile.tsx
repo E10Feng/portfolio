@@ -1,6 +1,6 @@
 "use client"
 
-import { motion } from "framer-motion"
+import { motion } from "motion/react"
 import { FileDown, Github, Linkedin, Mail } from "lucide-react"
 import { editorContainer, editorLine } from "./animations"
 

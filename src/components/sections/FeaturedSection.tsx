@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useEffect, useCallback } from "react"
-import { motion, AnimatePresence } from "framer-motion"
+import { motion, AnimatePresence } from "motion/react"
 import FadeInWhenVisible from "@/components/animations/FadeInWhenVisible"
 import { ExternalLink, Github } from "lucide-react"
 import { useTab } from "@/context/TabContext"

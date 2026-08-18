@@ -1,6 +1,6 @@
 "use client"
 
-import { motion } from "framer-motion"
+import { motion } from "motion/react"
 import Link from "next/link"
 import { resumeItems } from "@/data/resume"
 import { editorContainer, editorLine } from "./animations"
